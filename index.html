@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Junior NGWEJ Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<header>
+
+<div class="logo">Junior NGWEJ</div>
+
+<nav id="menu">
+<a href="#home">Accueil</a>
+<a href="#about">Profil</a>
+<a href="#skills">Compétences</a>
+<a href="#projects">Projets</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="menu-toggle">☰</div>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<img src="c:\Users\Administrator\Desktop\Junior port\image\img2.jpg" class="profile">
+
+<h1>Junior NGWEJ</h1>
+
+<h2 class="typing-container">
+<span id="typing"></span>
+</h2>
+
+<p>Développeur passionné par la technologie et les solutions numériques.</p>
+
+</section>
+
+
+<section id="about" class="hidden">
+
+<h2>Profil</h2>
+
+<p>
+
+Je suis un développeur web passionné par la création d'applications modernes
+et innovantes. J'aime transformer des idées en solutions numériques
+performantes.
+
+</p>
+
+</section>
+
+
+<section id="skills" class="hidden">
+
+<h2>Compétences</h2>
+
+<div class="skills-container">
+
+<div class="skill">
+<img src="icons/html.png">
+<p>HTML</p>
+</div>
+
+<div class="skill">
+<img src="icons/css.png">
+<p>CSS</p>
+</div>
+
+<div class="skill">
+<img src="icons/javascript.png">
+<p>JavaScript</p>
+</div>
+
+<div class="skill">
+<img src="icons/python.png">
+<p>Python</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="projects" class="hidden">
+
+<h2>Mes Projets</h2>
+
+<div class="projects-scroll">
+
+<div class="project-icon" onclick="openProject(1)">
+<img src="icons/univote.png">
+</div>
+
+<div class="project-icon" onclick="openProject(2)">
+<img src="icons/monebank.png">
+</div>
+
+<div class="project-icon" onclick="openProject(3)">
+<img src="icons/stock.png">
+</div>
+
+<div class="project-icon" onclick="openProject(4)">
+<img src="icons/arduino.png">
+</div>
+
+</div>
+
+</section>
+
+
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeProject()">×</span>
+
+<h2 id="projectTitle"></h2>
+
+<p id="projectDescription"></p>
+
+</div>
+
+</div>
+
+
+<section id="contact" class="hidden">
+
+<h2>Contact & Avis</h2>
+
+<form id="contactForm">
+
+<input type="text" placeholder="Votre nom" required>
+
+<input type="email" placeholder="Votre email" required>
+
+<textarea placeholder="Votre message"></textarea>
+
+<div class="stars">
+
+<span>★</span>
+<span>★</span>
+<span>★</span>
+<span>★</span>
+<span>★</span>
+
+</div>
+
+<button type="submit">Envoyer</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Junior NGWEJ</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
