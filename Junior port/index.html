@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JUNIOR NGWEJ | Portfolio</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<header>
+
+    <h1 class="logo">Portfolio</h1>
+
+<div class="menu-toggle">☰</div>
+
+<nav id="menu">
+
+<a href="#about">Me concernant</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Mes projet</a>
+<a href="#contact"> Contact</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-container">
+    
+    <img src="c:\Users\Administrator\Junior port\image\img2.jpg" class="profile">
+    
+    <div class="hero-text">
+    
+    <h1>Junior NGWEJ</h1>
+    <div class="typing-container">
+        <span id="typing"></span>
+      </div>
+ <p>
+    Développeur web passionné par la création d'applications modernes.
+    J’aime transformer les idées en solutions digitales.
+    </p>
+    
+    <p>
+    Créatif, curieux et toujours prêt à apprendre de nouvelles technologies.
+    </p>
+    
+    <a href="cv.pdf" download>
+    <button>Télécharger mon CV</button>
+    </a>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+
+
+<section id="about" class="hidden">
+
+<h2>Me concernant</h2>
+
+<p>
+Je me pré-nomme Junior Ngwej je suis un développeur web passionné par la création
+d'applications web avec HTML, CSS, JavaScript et Python.
+</p>
+
+</section>
+
+
+<section id="skills" class="hidden">
+
+    <h2>Mes Compétences</h2>
+    
+    <div class="skills-container">
+    
+    <div class="card">
+    <h3>HTML</h3>
+    <div class="skill-bar">
+    <div class="skill-progress html"></div>
+    </div>
+    </div>
+    
+    <div class="card">
+    <h3>CSS</h3>
+    <div class="skill-bar">
+    <div class="skill-progress css"></div>
+    </div>
+    </div>
+    
+    <div class="card">
+    <h3>JavaScript</h3>
+    <div class="skill-bar">
+    <div class="skill-progress js"></div>
+    </div>
+    </div>
+    
+    <div class="card">
+    <h3>Python</h3>
+    <div class="skill-bar">
+    <div class="skill-progress python"></div>
+    </div>
+    </div>
+    
+    </div>
+    
+    </section>
+
+
+<section id="projects" class="hidden">
+    <section class="stats hidden">
+
+        <h2>Mes Réalisations</h2>
+        
+        <div class="stats-container">
+        
+        <div class="stat">
+        <h3 class="counter" data-target="5">5</h3>
+        <p>Projets réalisés</p>
+        </div>
+        
+        <div class="stat">
+        <h3 class="counter" data-target="4">4</h3>
+        <p>Technologies</p>
+        </div>
+        
+        <div class="stat">
+        <h3 class="counter" data-target="1">2</h3>
+        <p>Année d'expérience</p>
+        </div>
+        
+        </div>
+        
+        </section>
+
+   <h2>Mes Projets </h2>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="image/images1.jfif" class="project-img">
+
+<h3>Uniovote</h3>
+
+<p>Système sécurisé pour organiser les élections universitaires.
+    c'est une application web dédiée à l'organisation et la gestion sécurisée des elections universitaires
+</p>
+
+</div>
+
+
+<div class="project">
+
+<img src="image/images3.jfif" class="project-img">
+
+<h3>MoneBank</h3>
+
+<p>Plateforme éducative sur l'économie monétaire et bancaire.
+    une platforme qui permet d'assimuler les fonctionnement de l'economie des bank tout en apprenant la logique u monetismes bancaire
+</p>
+
+</div>
+
+
+<div class="project">
+
+<img src="image/IMG'4.jpg" class="project-img">
+
+<h3>Gestion de Stock</h3>
+
+<p>Application web pour gérer les entrées et sorties des produits.
+    c'est une application web destinée a la gestion et suivis des stocks ainsi qu'au  controle de l'iventaire au seins des petites et moyennes entreprises
+</p>
+
+</div>
+
+<div class="project">
+
+    <img src="image/img8.png" class="project-img">
+    
+    <h3>Gestion des cours</h3>
+    
+    <p> concption et developpement d'une application web de gestion scolaire desinée à l'administrations.
+        elle permet de gérer  efficacement les information academique d'un etablissement scolairen
+    </p>
+    
+    </div>
+    
+
+
+<div class="project">
+
+<img src="image/img6.webp" class="project-img">
+
+<h3>Projet Arduino</h3>
+
+<p>Programmation de systèmes électroniques avec Arduino.</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="hidden">
+
+<h2>Contact</h2>
+
+<p>Email : juniorngwej3@gmail.com</p>
+
+</section>
+
+
+<script src="script.js"></script>
+<section id="contact">
+
+    <h2>Donnez votre avis</h2>
+    
+    <div class="contact-container">
+    
+    <form id="contactForm" class="contact-form">
+    
+    <div class="input-group">
+    <input type="text" required>
+    <label>Votre nom</label>
+    </div>
+    
+    <div class="input-group">
+    <input type="email" required>
+    <label>Votre email</label>
+    </div>
+    
+    <div class="input-group">
+    <textarea required></textarea>
+    <label>Votre message ou avis</label>
+    </div>
+    
+    <div class="rating">
+    <span>Votre note :</span>
+    
+    <div class="stars">
+    ★ ★ ★ ★ ★
+    </div>
+    
+    </div>
+    
+    <button type="submit">Envoyer l'avis</button>
+    
+    </form>
+    
+    </div>
+    
+    </section>
+
+    <section class="social hidden">
+
+        <h2>Me retrouver</h2>
+        
+        <div class="social-links">
+        
+        <a href="#">GitHub</a>
+        
+        <a href="#">LinkedIn</a>
+        
+        <a href="#">Twitter</a>
+        
+        <a href="#">Email</a>
+        
+        </div>
+        
+        </section>
+
+<footer>
+
+    <section id="contact" class="hidden">
+
+        <h2>Contact</h2>
+        
+        <p>Email : juniorngwej3@gmail.com
+            Num : +243987722320
+                  +243981006621 ss</p>
+        
+        </section>
+
+    <p>© 2026 JUNIOR NGWEJ | Développeur Web</p>
+    <p>
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a> |
+        <a href="#">Portfolio</a>
+    </p>
+
+</footer>
+
+</body>
+
+</html>
