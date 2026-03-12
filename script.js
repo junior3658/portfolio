@@ -1,174 +1,133 @@
-/* typing effect */
+/* =========================
+TYPING EFFECT PROFESSIONNEL
+========================= */
 
-const words=["Web Developer","Python Developer","Creative Programmer"]
+const words = ["Web Developer", "Python Developer", "Creative Programmer"];
+let wordIndex = 0;
+let letterIndex = 0;
+let deleting = false;
 
-let wordIndex=0
-let letterIndex=0
-let deleting=false
+function typingEffect() {
+    const typing = document.getElementById("typing");
+    const current = words[wordIndex];
 
-function typingEffect(){
-
-const typing=document.getElementById("typing")
-const current=words[wordIndex]
-
-if(!deleting){
-
-typing.textContent=current.substring(0,letterIndex++)
-
-if(letterIndex>current.length){
-
-deleting=true
-setTimeout(typingEffect,1000)
-return
-
+    if(!deleting){
+        typing.textContent = current.substring(0, letterIndex++);
+        if(letterIndex > current.length){
+            deleting = true;
+            setTimeout(typingEffect, 1000);
+            return;
+        }
+    } else {
+        typing.textContent = current.substring(0, letterIndex--);
+        if(letterIndex === 0){
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+    setTimeout(typingEffect, 80);
 }
 
-}else{
-
-typing.textContent=current.substring(0,letterIndex--)
-
-if(letterIndex===0){
-
-deleting=false
-wordIndex=(wordIndex+1)%words.length
-
-}
-
-}
-
-setTimeout(typingEffect,80)
-
-}
-
-typingEffect()
+typingEffect();
 
 
+/* =========================
+SCROLL ANIMATION PROFESSIONNEL
+========================= */
 
-/* scroll animation */
-
-const hiddenElements=document.querySelectorAll(".hidden")
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show")
-
-}
-
-})
-
-})
-
-hiddenElements.forEach(el=>observer.observe(el))
+const hiddenElements = document.querySelectorAll(".hidden");
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{threshold:0.2});
+hiddenElements.forEach(el=>observer.observe(el));
 
 
+/* =========================
+CURSOR FLUIDE
+========================= */
 
-/* cursor */
-
-const cursor=document.querySelector(".cursor")
-
+const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove",(e)=>{
-
-cursor.style.transform=`translate(${e.clientX}px,${e.clientY}px)`
-
-})
+    cursor.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+});
 
 
+/* =========================
+MENU MOBILE
+========================= */
 
-/* menu */
-
-const toggle=document.querySelector(".menu-toggle")
-const menu=document.getElementById("menu")
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.getElementById("menu");
 
 toggle.addEventListener("click",()=>{
-
-menu.classList.toggle("active")
-
-})
+    menu.classList.toggle("active");
+});
 
 
+/* =========================
+CONTACT FORM
+========================= */
 
-/* formulaire */
-
-const form=document.getElementById("contactForm")
-
+const form = document.getElementById("contactForm");
 form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const button = form.querySelector("button");
+    button.innerText = "Envoi...";
+    setTimeout(()=>{
+        button.innerText = "Message envoyé ✓";
+        form.reset();
+        setTimeout(()=>{ button.innerText = "Envoyer"; }, 2000);
+    }, 1000);
+});
 
-e.preventDefault()
 
-alert("Merci pour votre message !")
+/* =========================
+COUNTER ANIMATION
+========================= */
 
-form.reset()
+const counters = document.querySelectorAll(".counter");
+counters.forEach(counter=>{
+    const target = +counter.dataset.target;
+    let count = 0;
+    const update = () => {
+        const increment = target / 120;
+        count += increment;
+        if(count < target){
+            counter.innerText = Math.ceil(count);
+            requestAnimationFrame(update);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    update();
+});
 
-})
 
+/* =========================
+STAR RATING
+========================= */
 
-
-/* stars */
-
-const stars=document.querySelectorAll(".stars span")
-
+const stars = document.querySelectorAll(".stars span");
 stars.forEach((star,index)=>{
-
-star.addEventListener("click",()=>{
-
-stars.forEach((s,i)=>{
-
-s.style.color=i<=index?"gold":"gray"
-
-})
-
-})
-
-})
+    star.addEventListener("click",()=>{
+        stars.forEach((s,i)=>{
+            s.style.color = i <= index ? "gold" : "gray";
+        });
+    });
+});
 
 
+/* =========================
+PARALLAX HERO EFFET
+========================= */
 
-/* projets */
-
-function openProject(id){
-
-const modal=document.getElementById("projectModal")
-const title=document.getElementById("projectTitle")
-const desc=document.getElementById("projectDescription")
-
-modal.style.display="flex"
-
-if(id==1){
-
-title.innerText="UniVote"
-desc.innerText="Application web pour organiser des élections universitaires sécurisées."
-
-}
-
-if(id==2){
-
-title.innerText="MoneBank"
-desc.innerText="Site web sur l'économie monétaire et bancaire."
-
-}
-
-if(id==3){
-
-title.innerText="Gestion de Stock"
-desc.innerText="Application web de gestion des entrées et sorties."
-
-}
-
-if(id==4){
-
-title.innerText="Arduino"
-desc.innerText="Projet IoT basé sur Arduino."
-
-}
-
-}
-
-function closeProject(){
-
-document.getElementById("projectModal").style.display="none"
-
-}
+const hero = document.querySelector(".hero");
+window.addEventListener("mousemove",(e)=>{
+    const x = (window.innerWidth / 2 - e.pageX) / 40;
+    const y = (window.innerHeight / 2 - e.pageY) / 40;
+    hero.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
